@@ -807,8 +807,10 @@ extension DropDown {
 				self.setHiddentState()
 			},
 			completion: { [unowned self] finished in
-				self.isHidden = true
-				self.removeFromSuperview()
+				if finished {
+					self.isHidden = true
+					self.removeFromSuperview()
+				}
 			})
 	}
 
